@@ -21,6 +21,18 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+
+- How To Install -
+
+1. composer install
+2. php artisan optimize
+3. php artisan migrate:fresh --seed
+4. php artisan serve 
+5. npm run dev
+
+-------------------
+
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
