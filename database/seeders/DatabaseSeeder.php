@@ -28,5 +28,7 @@ class DatabaseSeeder extends Seeder
             StatusSeeder::class,
         ]);
 
+        \App\Models\Siswa::factory(1000)->create();
+
     }
 }

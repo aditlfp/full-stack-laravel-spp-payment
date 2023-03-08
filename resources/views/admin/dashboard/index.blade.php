@@ -63,7 +63,7 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{ route('profile.edit')}}">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors hover:bg-gray-200 rounded-md" href="{{ route('profile.edit')}}">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>customer-support</title>
@@ -90,7 +90,7 @@
             @csrf
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" onclick="this.closest('form').submit();return false;">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors hover:cursor-pointer hover:bg-gray-200 rounded-md" onclick="this.closest('form').submit();return false;">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                 <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>document</title>
@@ -113,7 +113,7 @@
           </form>
           @else
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{ route('login')}}">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors hover:bg-gray-200 rounded-md" href="{{ route('login')}}">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                 <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>document</title>
@@ -134,7 +134,7 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{ route('register')}}">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors hover:bg-gray-200 rounded-md" href="{{ route('register')}}">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                 <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>spaceship</title>
@@ -377,136 +377,64 @@
             <!-- row 1 -->
             <div class="flex flex-wrap -mx-3">
               <!-- card Data 1 -->
-              <a href="{{ route('siswa.index')}}" class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 hover:px-2 transition-all ease-in 1s">
-                <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
-                  <div class="flex-auto p-4">
-                    <div class="flex flex-row -mx-3">
-                      <div class="flex-none w-2/3 max-w-full px-3">
-                        <div>
-                          <p class="mb-0 font-sans font-semibold leading-normal text-[11px]">Semua Data Siswa</p>
-                          <h5 class="mb-0 font-bold">
-                            {{ __('Data Siswa')}}
-                          </h5>
-                        </div>
-                      </div>
-                      <div class="px-3 text-right basis-1/3">
-                        <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-purple-700 to-pink-500">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="bg-slate-200 px-5 py-2 rounded-lg">
+                <div class="bg-white mb-3 py-3 px-2 rounded-md text-center shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="120" height="120"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 16v4h4v2H2v-6h2zm18 0v6h-6v-2h4v-4h2zM7.5 7a4.5 4.5 0 0 0 9 0h2a6.5 6.5 0 0 1-3.499 5.767L15 19H9v-6.232A6.5 6.5 0 0 1 5.5 7h2zM12 5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM8 2v2l-4-.001V8H2V2h6zm14 0v6h-2V4h-4V2h6z" fill="rgba(40,0,255,1)"/></svg>
                 </div>
-              </a>
-
-              <!-- card Data 5 -->
-              <a href="{{ route('contacts.index')}}" class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 hover:px-2 transition-all ease-in 1s">
-                <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
-                  <div class="flex-auto p-4">
-                    <div class="flex flex-row -mx-3">
-                      <div class="flex-none w-2/3 max-w-full px-3">
-                        <div>
-                          <p class="mb-0 font-sans font-semibold leading-normal text-[11px]">Semua Data Pay Spp</p>
-                          <h5 class="mb-0 font-bold">
-                            {{ __('Contact Us')}}
-                          </h5>
-                        </div>
-                      </div>
-                      <div class="px-3 text-right basis-1/3">
-                        <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-purple-700 to-pink-500">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="text-center my-2">
+                  <a href="{{ route('siswa.index')}}" class="bg-blue-700 text-white font-semibold px-2 py-1 rounded-md hover:bg-blue-800 hover:text-slate-200 transition-all ease-in-out 1s">View Data Siswa</a>
                 </div>
-              </a>
+              </div>
 
               <!-- card Data 2 -->
-              <a href="{{ route('petugas.index')}}" class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 hover:px-2 transition-all ease-in 1s">
-                <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
-                  <div class="flex-auto p-4">
-                    <div class="flex flex-row -mx-3">
-                      <div class="flex-none w-2/3 max-w-full px-3">
-                        <div>
-                          <p class="mb-0 font-sans font-semibold leading-normal text-[11px]">Semua Data Petugas</p>
-                          <h5 class="mb-0 font-bold">
-                            {{ __('Data Petugas')}}
-                          </h5>
-                        </div>
-                      </div>
-                      <div class="px-3 text-right basis-1/3">
-                        <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-purple-700 to-pink-500">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="bg-slate-200 px-5 py-2 rounded-lg mx-5">
+                <div class="bg-white mb-3 py-3 px-2 rounded-md text-center shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="120" height="120"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 16.42v3.536a1 1 0 0 1-.93.998c-.437.03-.794.046-1.07.046-8.837 0-16-7.163-16-16 0-.276.015-.633.046-1.07A1 1 0 0 1 4.044 3H7.58a.5.5 0 0 1 .498.45c.023.23.044.413.064.552A13.901 13.901 0 0 0 9.35 8.003c.095.2.033.439-.147.567l-2.158 1.542a13.047 13.047 0 0 0 6.844 6.844l1.54-2.154a.462.462 0 0 1 .573-.149 13.901 13.901 0 0 0 4 1.205c.139.02.322.042.55.064a.5.5 0 0 1 .449.498z" fill="rgba(40,0,255,1)"/></svg>
                 </div>
-              </a>
+                <div class="text-center my-2">
+                  <a href="{{ route('contacts.index')}}" class="bg-blue-700 text-white font-semibold px-2 py-1 rounded-md hover:bg-blue-800 hover:text-slate-200 transition-all ease-in-out 1s">View Data Contact Us</a>
+                </div>
+              </div>
 
               <!-- card Data 3 -->
-              <a href="{{ route('kelas.index')}}" class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 hover:px-2 transition-all ease-in 1s">
-                <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
-                  <div class="flex-auto p-4">
-                    <div class="flex flex-row -mx-3">
-                      <div class="flex-none w-2/3 max-w-full px-3">
-                        <div>
-                          <p class="mb-0 font-sans font-semibold leading-normal text-[11px]">Semua Data Kelas</p>
-                          <h5 class="mb-0 font-bold">
-                            {{ __('Data Kelas')}}
-                          </h5>
-                        </div>
-                      </div>
-                      <div class="px-3 text-right basis-1/3">
-                        <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-purple-700 to-pink-500">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="bg-slate-200 px-5 py-2 rounded-lg mx-5">
+                <div class="bg-white mb-3 py-3 px-2 rounded-md text-center shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="120" height="120"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 14v8H4a8 8 0 0 1 8-8zm6 7.5l-2.939 1.545.561-3.272-2.377-2.318 3.286-.478L18 14l1.47 2.977 3.285.478-2.377 2.318.56 3.272L18 21.5zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z" fill="rgba(40,0,255,1)"/></svg>
                 </div>
-              </a>
+                <div class="text-center my-2">
+                  <a href="{{ route('petugas.index')}}" class="bg-blue-700 text-white font-semibold px-2 py-1 rounded-md hover:bg-blue-800 hover:text-slate-200 transition-all ease-in-out 1s">View Data Petugas</a>
+                </div>
+              </div>
 
               <!-- card Data 4 -->
-              <a href="{{ route('cspp.index')}}" class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 hover:px-2 transition-all ease-in 1s">
-                <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
-                  <div class="flex-auto p-4">
-                    <div class="flex flex-row -mx-3">
-                      <div class="flex-none w-2/3 max-w-full px-3">
-                        <div>
-                          <p class="mb-0 font-sans font-semibold leading-normal text-[11px]">Semua Data Spp</p>
-                          <h5 class="mb-0 font-bold">
-                            {{ __('Data Spp')}}
-                          </h5>
-                        </div>
-                      </div>
-                      <div class="px-3 text-right basis-1/3">
-                        <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-purple-700 to-pink-500">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="bg-slate-200 px-5 py-2 rounded-lg mx-5">
+                <div class="bg-white mb-3 py-3 px-2 rounded-md text-center shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="120" height="120"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9H0l10.327-9.388a1 1 0 0 1 1.346 0L22 11h-3v9zm-8-5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="rgba(40,0,255,1)"/></svg>
                 </div>
-              </a>
+                <div class="text-center my-2">
+                  <a href="{{ route('kelas.index')}}" class="bg-blue-700 text-white font-semibold px-2 py-1 rounded-md hover:bg-blue-800 hover:text-slate-200 transition-all ease-in-out 1s">View Data Kelas</a>
+                </div>
+              </div>
 
-              <!-- card Data 4 -->
-              <a href="{{ route('spp.index')}}" class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4 hover:px-2 transition-all ease-in 1s">
-                <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
-                  <div class="flex-auto p-4">
-                    <div class="flex flex-row -mx-3">
-                      <div class="flex-none w-2/3 max-w-full px-3">
-                        <div>
-                          <p class="mb-0 font-sans font-semibold leading-normal text-[11px]">Semua Data Pay Spp</p>
-                          <h5 class="mb-0 font-bold">
-                            {{ __('Data Payment')}}
-                          </h5>
-                        </div>
-                      </div>
-                      <div class="px-3 text-right basis-1/3">
-                        <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-purple-700 to-pink-500">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <!-- card Data 5 -->
+              <div class="bg-slate-200 px-5 py-2 rounded-lg -mx-1 mx-[1px] mt-5">
+                <div class="bg-white mb-3 py-3 px-2 rounded-md text-center shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="120" height="120"><path fill="none" d="M0 0h24v24H0z"/><path d="M9.33 11.5h2.17A4.5 4.5 0 0 1 16 16H8.999L9 17h8v-1a5.578 5.578 0 0 0-.886-3H19a5 5 0 0 1 4.516 2.851C21.151 18.972 17.322 21 13 21c-2.761 0-5.1-.59-7-1.625L6 10.071A6.967 6.967 0 0 1 9.33 11.5zM5 19a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v9zM18 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm-7-3a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill="rgba(40,0,255,1)"/></svg>
                 </div>
-              </a>
+                <div class="text-center my-2">
+                  <a href="{{ route('cspp.index')}}" class="bg-blue-700 text-white font-semibold px-2 py-1 rounded-md hover:bg-blue-800 hover:text-slate-200 transition-all ease-in-out 1s">View Data Spp</a>
+                </div>
+              </div>
+
+              <!-- card Data 6 -->
+              <div class="bg-slate-200 px-5 py-2 rounded-lg mx-5 mt-5">
+                <div class="bg-white mb-3 py-3 px-2 rounded-md text-center shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="120" height="120"><path fill="none" d="M0 0h24v24H0z"/><path d="M2 9h19a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9zm1-6h15v4H2V4a1 1 0 0 1 1-1zm12 11v2h3v-2h-3z" fill="rgba(40,0,255,1)"/></svg>
+                </div>
+                <div class="text-center my-2">
+                  <a href="{{ route('spp.index')}}" class="bg-blue-700 text-white font-semibold px-2 py-1 rounded-md hover:bg-blue-800 hover:text-slate-200 transition-all ease-in-out 1s">View Data Payment</a>
+                </div>
+              </div>
 
               
             </div>

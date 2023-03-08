@@ -15,10 +15,10 @@
         <table class="table-auto text-center" id="searchTable">
             <thead>
               <tr>
-                <th class="px-4 py-2 border">No</th>
-                <th class="px-4 py-2 border">Nama Kelas</th>
-                <th class="px-4 py-2 border">Kompetensi Keahlian</th>
-                <th class="px-4 py-2 border">Action</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">No</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Nama Kelas</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Kompetensi Keahlian</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -28,18 +28,18 @@
 
               @foreach( $kelas as $s)
                 <tr>
-                  <td class="border px-4 py-2">{{ $no++}}</td>
-                  <td class="border px-4 py-2">{{ $s->nama_kelas}}</td>
-                  <td class="border px-4 py-2">{{ $s->kompetensi_keahlian}}</td>
-                  <td class="border px-4 py-2">
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $no++}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->nama_kelas}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->kompetensi_keahlian}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">
                     <div class="flex gap-2">
-                      <a href="{{ url('/admin/kelas/'.$s->id. '/edit')}}" class="bg-[#FFED00] px-3 py-1 rounded text-lg hover:bg-amber-300 transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
+                      <a href="{{ url('/admin/kelas/'.$s->id. '/edit')}}" class="bg-[#FFED00] shadow-md px-3 py-1 rounded text-lg hover:bg-amber-400 hover:shadow-sm transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
                       </a>
                     <form action="{{ url('admin/kelas/'. $s->id)}}" method="POST">
                       @csrf
                       @method('DELETE')
 
-                      <button type="submit" class="bg-red-600 px-3 py-1 rounded text-lg hover:bg-red-700 transition all ease-out duration-100"><i class="ri-delete-bin-2-line"></i></button>
+                      <button type="submit" class="bg-red-600 px-3 py-1 shadow-md rounded text-lg hover:bg-red-700 hover:shadow-sm transition all ease-out duration-100"><i class="ri-delete-bin-2-line"></i></button>
 
                     </form>
                   </div>

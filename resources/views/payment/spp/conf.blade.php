@@ -54,7 +54,7 @@
             </div>
             <div class="md:w-2/3">
             @if ($confPay != null)
-                <img src="{{ asset('storage/images/'. $confPay->img)}}" alt="Confirmation Image" srcset="" width="30%">
+                <img src="{{ asset('/storage/images/'. $confPay->img)}}" srcset="" width="30%">
             @else
                 <span class="text-white font-semibold text-lg bg-red-700 px-5 py-2 rounded-md">Belum Dikonfirmasi</span>
             @endif

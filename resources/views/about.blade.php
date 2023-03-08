@@ -9,7 +9,7 @@
                 <ul>
                   <li class="flex items-center space-x-4 xl:py-2">
                     <i class="ri-map-pin-3-fill"></i>
-                    <span class="font-medium text-black capitalize">Everything about this website is made by Aditya</span>
+                    <span class="font-medium text-black capitalize">Everything about this website is made by Aditya andrian krisna budi</span>
                   </li>
                   <li class="flex items-center py-1 space-x-4 xl:py-3">
                     <i class="ri-map-pin-3-fill text-yellow-600"></i>

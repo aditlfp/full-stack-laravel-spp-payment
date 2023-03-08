@@ -16,14 +16,14 @@
         <table class="table-auto text-center" id="searchTable">
             <thead>
               <tr>
-                <th class="px-4 py-2 border">No</th>
-                <th class="px-4 py-2 border">Foto Profil</th>
-                <th class="px-4 py-2 border">Nisn</th>
-                <th class="px-4 py-2 border">Nis</th>
-                <th class="px-4 py-2 border">Nama</th>
-                <th class="px-4 py-2 border">Kelas</th>
-                <th class="px-4 py-2 border">Spp</th>
-                <th class="px-4 py-2 border">Action</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">No</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Foto Profil</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Nisn</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Nis</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Nama</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Kelas</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Spp</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -33,26 +33,26 @@
 
               @foreach( $siswa as $s)
                 <tr>
-                  <td class="border px-4 py-2">{{ $no++}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $no++}}</td>
                   @if ($s->img === 'No Image')
-                    <td class="border px-4"><img src="/data-img/default-img.png" alt="Image Profil" srcset="" height="100px" width="100px"></td>
+                    <td class="border-2 border-inherit bg-amber-200 px-4"><img src="/data-img/default-img.png" alt="Image Profil" srcset="" height="100px" width="100px"></td>
                   @else
-                    <td class="border px-4"><img src="{{ asset('storage/images/'.$s->img)}}" alt="Image Profil" srcset="" height="100px" width="100px"></td>
+                    <td class="border-2 border-inherit bg-amber-200 px-4"><img src="{{ asset('storage/images/'.$s->img)}}" alt="Image Profil" srcset="" height="100px" width="100px"></td>
                   @endif
-                  <td class="border px-4 py-2">{{ $s->nisn}}</td>
-                  <td class="border px-4 py-2">{{ $s->nis}}</td>
-                  <td class="border px-4 py-2">{{ $s->nama}}</td>
-                  <td class="border px-4 py-2">{{ $s->kelas->nama_kelas}} - {{ $s->kelas->kompetensi_keahlian}}</td>
-                  <td class="border px-4 py-2">{{ $s->spp->tahun}} /  {{ toRupiah($s->spp->nominal)}}</td>
-                  <td class="border px-4 py-2">
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->nisn}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->nis}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->nama}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->kelas->nama_kelas}} - {{ $s->kelas->kompetensi_keahlian}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->spp->tahun}} /  {{ toRupiah($s->spp->nominal)}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">
                     <div class="flex gap-2">
-                      <a href="{{ url('/admin/siswa/'.$s->id. '/edit')}}" class="bg-[#FFED00] px-3 py-1 rounded text-lg hover:bg-amber-300 transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
+                      <a href="{{ url('/admin/siswa/'.$s->id. '/edit')}}" class="bg-[#FFED00] shadow-md px-3 py-1 rounded text-lg hover:bg-amber-400 hover:shadow-sm transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
                       </a>
                       <form action="{{ url('admin/siswa/'. $s->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="bg-red-600 px-3 py-1 rounded text-lg hover:bg-red-700 transition all ease-out duration-100"><i class="ri-delete-bin-2-line"></i></button>
+                        <button type="submit" class="bg-red-600 px-3 py-1 shadow-md rounded text-lg hover:bg-red-700 hover:shadow-sm transition all ease-out duration-100"><i class="ri-delete-bin-2-line"></i></button>
 
                       </form>
                     </div>

@@ -30,6 +30,7 @@ class PaymentRequest extends FormRequest
             'id_spp' => 'required|string',
             'status_id' => 'required|string',
             'keterangan' => 'string',
+            'lain_lain' => 'string',
             'jumlah_bayar' => 'required|string',
             'kembalian_bayar' => 'string',
 

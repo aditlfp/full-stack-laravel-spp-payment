@@ -15,14 +15,14 @@
         <table class="table-auto text-center" id="searchTable">
             <thead>
               <tr>
-                <th class="px-4 py-2 border">No</th>
-                <th class="px-4 py-2 border">Image</th>
-                <th class="px-4 py-2 border">Username</th>
-                <th class="px-4 py-2 border">Nama Petugas</th>
-                <th class="px-4 py-2 border">Position</th>
-                <th class="px-4 py-2 border">Alamat</th>
-                <th class="px-4 py-2 border">No Telp</th>
-                <th class="px-4 py-2 border">Action</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">No</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Image</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Username</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Nama Petugas</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Position</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Alamat</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">No Telp</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -34,31 +34,31 @@
               @if ($s->level_id === 3)
               @continue
               <tr>
-                  <td colspan="8" class="border px-4 py-2">Tidak Ada Data</td>
+                  <td colspan="8" class="border-2 border-inherit bg-amber-200 px-4 py-2">Tidak Ada Data</td>
               </tr>
               @break
                 @else
                 <tr>
-                  <td class="border px-4 py-2">{{ $no++}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $no++}}</td>
                   @if ($s->img === 'No Image')
-                    <td class="border px-4"><img src="/data-img/default-img.png" alt="Image Profil" srcset="" height="100px" width="100px"></td>
+                    <td class="border-2 border-inherit bg-amber-200 px-4"><img src="/data-img/default-img.png" alt="Image Profil" srcset="" height="100px" width="100px"></td>
                   @else
-                    <td class="border px-4"><img src="{{ asset('storage/images/'.$s->img)}}" alt="Image Profil" srcset="" height="100px" width="100px"></td>
+                    <td class="border-2 border-inherit bg-amber-200 px-4"><img src="{{ asset('storage/images/'.$s->img)}}" alt="Image Profil" srcset="" height="100px" width="100px"></td>
                   @endif
-                  <td class="border px-4 py-2">{{ $s->username}}</td>
-                  <td class="border px-4 py-2">{{ $s->nama_petugas}}</td>
-                  <td class="border px-4 py-2">{{ $s->level->name}}</td>
-                  <td class="border px-4 py-2">{{ $s->alamat}}</td>
-                  <td class="border px-4 py-2">{{ $s->no_telp}}</td>
-                  <td class="border px-4 py-2">
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->username}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->nama_petugas}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->level->name}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->alamat}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->no_telp}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">
                     <div class="flex gap-2">
-                      <a href="{{ url('/admin/petugas/'.$s->id. '/edit')}}" class="bg-[#FFED00] px-3 py-1 rounded text-lg hover:bg-amber-300 transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
+                      <a href="{{ url('/admin/petugas/'.$s->id. '/edit')}}" class="bg-[#FFED00]  shadow-md px-3 py-1 rounded text-lg hover:bg-amber-400 hover:shadow-sm transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
                       </a>
                       <form action="{{ url('admin/petugas/'. $s->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="bg-red-600 px-3 py-1 rounded text-lg hover:bg-red-700 transition all ease-out duration-100"><i class="ri-delete-bin-2-line"></i></button>
+                        <button type="submit" class="bg-red-600 px-3 py-1 rounded text-lg shadow-md hover:bg-red-700 hover:shadow-sm transition all ease-out duration-100"><i class="ri-delete-bin-2-line"></i></button>
 
                       </form>
                     </div>

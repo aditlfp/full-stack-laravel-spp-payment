@@ -21,7 +21,7 @@ class AdminSiswaController extends Controller
      */
     public function index()
     {
-        $siswa = Siswa::paginate(5)->onEachSide(1)->fragment('siswa');
+        $siswa = Siswa::paginate(100)->onEachSide(1)->fragment('siswa');
         return view('admin.siswa.index', compact('siswa'));
     }
 

@@ -6,9 +6,9 @@
         @if (Route::has('login'))
         @auth
             @if (Auth::user()->level_id === 1)
-                <a href="{{ route('spp.create')}}" class="bg-slate-600 px-5 py-2 rounded-lg text-white hover:bg-slate-500 hover:text-slate-800 transition all ease duration-100">New Payment</a>
+                <a href="{{ route('spp.create')}}" class="bg-slate-600 px-5 py-2 rounded-lg text-white hover:bg-slate-500 hover:text-slate-800 transition all ease duration-100 font-semibold">+ New Payment</a>
             @elseif (Auth::user()->level_id === 2)
-                <a href="{{ route('spps.create')}}" class="bg-slate-600 px-5 py-2 rounded-lg text-white hover:bg-slate-500 hover:text-slate-800 transition all ease duration-100">New Payment</a>
+                <a href="{{ route('spps.create')}}" class="bg-slate-600 px-5 py-2 rounded-lg text-white hover:bg-slate-500 hover:text-slate-800 transition all ease duration-100 font-semibold">+ New Payment</a>
             @else
             
             @endif
@@ -37,14 +37,15 @@
         <table class="table-auto text-center" id="searchTable">
             <thead>
               <tr>
-                <th class="px-4 py-2 border">No</th>
-                <th class="px-4 py-2 border">Nama Petugas</th>
-                <th class="px-4 py-2 border">NISN / Siswa</th>
-                <th class="px-4 py-2 border">Tanggal Bayar</th>
-                <th class="px-4 py-2 border">Spp Tahunan</th>
-                <th class="px-4 py-2 border">Status</th>
-                <th class="px-4 py-2 border">Keterangan</th>
-                <th class="px-4 py-2 border">Action</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">No</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Nama Petugas</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">NISN / Siswa</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Tanggal Bayar</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Spp Tahunan</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Status</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Keterangan</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Lain Lain</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -54,14 +55,14 @@
 
               @foreach( $pay as $s)
                 <tr>
-                  <td class="border px-4 py-2">{{ $no++}}</td>
-                  <td class="border px-4 py-2">{{ $s->petugas->nama_petugas}}</td>
-                  <td class="border px-4 py-2">{{ $s->siswa->nisn}} / {{ $s->siswa->nama}}</td>
-                  <td class="border px-4 py-2">{{ $s->tgl_bayar}}</td>
-                  <td class="border px-4 py-2">{{ $s->spp->tahun}} / {{ toRupiah($s->spp->nominal)}}</td>
-                  <td class="border px-4 py-2">
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $no++}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->petugas->nama_petugas}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->siswa->nisn}} / {{ $s->siswa->nama}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->tgl_bayar}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->spp->tahun}} / {{ toRupiah($s->spp->nominal)}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">
                     @if ($s->status->id === 1)
-                        <span class="bg-[#FFB84C] uppercase px-2 pb-1 rounded-full text-white text-[10px] font-semibold shadow-md">{{ $s->status->name}}</span>
+                        <span class="bg-[#FD841F] uppercase px-2 pb-1 rounded-full text-white text-[10px] font-semibold shadow-md">{{ $s->status->name}}</span>
 
                     @elseif ($s->status->id === 2)
                         <span class="bg-[#DC0000] uppercase px-2 pb-1 rounded-full text-white text-[10px] font-semibold shadow-md">{{ $s->status->name}}</span>
@@ -74,7 +75,7 @@
                     @endif
                   </td>
 
-                  <td class="border px-4 py-2">
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">
                     @if ($s->keterangan === 'Lunas')
                         <span class="bg-[#379237] uppercase px-2 pb-1 rounded-full text-white text-[10px] font-semibold shadow-md">{{ $s->keterangan}}</span>
                     @elseif ($s->keterangan === '-')
@@ -84,7 +85,9 @@
                     @endif
                 </td>
 
-                  <td class="border px-4 py-2">
+                <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->lain_lain}}</td>
+
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">
                     <div class="flex gap-2">
                     @if (Auth::user()->level_id === 1 )
 
@@ -93,16 +96,18 @@
                     <form action="{{ route('payment.success', $s->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <button type="submit" class="bg-[#379237] hover:bg-[#54B435] px-3 py-1 text-xl rounded  transition all ease-out duration-100"><i class="ri-checkbox-fill text-white"></i>
+                        <button type="submit" class="bg-[#379237] shadow-md hover:bg-[#54B435] hover:shadow-sm px-3 py-1 text-xl rounded  transition all ease-out duration-100"><i class="ri-checkbox-fill text-white"></i>
                         </button>
                     </form>
-                           
+                    
+                    @elseif($s->status_id === 3)
+                    <a href="{{ url('/spp/export/'. $s->id)}}" class="block text-white shadow-md bg-blue-700 hover:bg-blue-800 hover:shadow-sm focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md mx-2 text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="ri-file-download-fill text-white text-lg"></i></a>   
 
                     @elseif ($s->status_id === 4)
                     <form action="{{ route('payment.success', $s->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <button type="submit" class="bg-[#379237] hover:bg-[#54B435] px-3 py-1 text-xl rounded  transition all ease-out duration-100"><i class="ri-checkbox-fill text-white"></i>
+                        <button type="submit" class="bg-[#379237] shadow-md hover:bg-[#54B435] hover:shadow-sm px-3 py-1 text-xl rounded  transition all ease-out duration-100"><i class="ri-checkbox-fill text-white"></i>
                         </button>
                     </form>
                     @else
@@ -114,10 +119,9 @@
                     @if ($s->status_id != 0)
                     @if (Auth::user()->level_id === 1 )
                     @auth
-
-                        <a href="{{ url('payment/spp/'. $s->id)}}" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md mx-2 text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="ri-eye-fill text-white text-lg"></i></a>    
+                        <a href="{{ url('payment/spp/'. $s->id)}}" class="block text-white shadow-md bg-blue-700 hover:bg-blue-800 hover:shadow-sm focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md mx-2 text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="ri-eye-fill text-white text-lg"></i></a>    
                     @elseif(Auth::user()->level_id === 2)
-                        <a href="{{ url('payment/spps/'. $s->id)}}" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md mx-2 text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="ri-eye-fill text-white text-lg"></i></a>
+                        <a href="{{ url('payment/spps/'. $s->id)}}" class="block text-white bg-blue-700 shadow-md hover:bg-blue-800 hover:shadow-sm focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md mx-2 text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="ri-eye-fill text-white text-lg"></i></a>
                     @endauth
                     @endif
                     @endif
@@ -130,10 +134,10 @@
                         
                         @auth
                             @if ($s->status->id === 1)
-                                <a href="{{ url('payment/spps/'.$s->id. '/edit')}}" class="bg-[#FFED00] px-3 py-1 rounded text-lg hover:bg-amber-300 transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
+                                <a href="{{ url('payment/spps/'.$s->id. '/edit')}}" class="bg-[#FFED00] px-3 py-1 rounded text-lg shadow-md hover:bg-amber-300 hover:shadow-sm transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
                                 </a>
                             @elseif ($s->status->id === 4)
-                                <a href="{{ url('payment/spps/'.$s->id. '/edit')}}" class="bg-[#FFED00] px-3 py-1 rounded text-lg hover:bg-amber-300 transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
+                                <a href="{{ url('payment/spps/'.$s->id. '/edit')}}" class="bg-[#FFED00] px-3 py-1 rounded text-lg shadow-md hover:bg-amber-300 hover:shadow-sm transition all ease-out duration-100"><i class="ri-edit-box-line"></i>
                                 </a>
                             @else
                             

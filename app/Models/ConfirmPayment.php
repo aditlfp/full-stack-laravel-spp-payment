@@ -28,6 +28,6 @@ class ConfirmPayment extends Model
 
     public function Spp()
     {
-        return $this->belongsTo(Spp::class. 'spp_id', 'id');
+        return $this->belongsTo(Spp::class, 'spp_id', 'id');
     }
 }

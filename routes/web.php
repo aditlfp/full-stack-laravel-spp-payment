@@ -54,6 +54,7 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::resource('/payment/spp', PaymentController::class);
     Route::put('/payment/spp/{id}/success', [PaymentController::class, 'success'])->name('payment.success');
     Route::get('/spp/pdf', [PaymentController::class, 'expdf'])->name('payment.pdf');
+    Route::get('/spp/export/{siswa_id}', [PaymentController::class, 'export'])->name('payment.export');
     Route::get('/dash', [AdminDashboardController::class, 'index'])->name('admin.panel');
 
 

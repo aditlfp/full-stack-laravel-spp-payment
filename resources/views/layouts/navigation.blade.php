@@ -11,20 +11,20 @@
             <div id="nav" class="absolute top-0 left-0 hidden block w-full mt-20 border-b border-gray-200 sm:border-none sm:px-5 sm:block sm:relative sm:mt-0 sm:px-0 sm:w-auto">
                 <nav class="flex flex-col items-center py-3 bg-white border border-gray-100 sm:flex-row sm:bg-transparent sm:border-none sm:py-0">
                     <span class="ml-3 text-xl font-black block sm:hidden bg-yellow-500 px-5 rounded-md my-2 shadow-md">SPP Payment</span>
-                    <a href="{{ url('/')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-full transition duration-100 px-2 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Home</a>
-                    <a href="{{ route('dashboard')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-full transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Dashboard</a>
+                    <a href="{{ url('/')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-md transition duration-100 px-2 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Home</a>
+                    <a href="{{ route('dashboard')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-md transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Dashboard</a>
                     @if (Route::has('login'))
                     @auth
                         @if (Auth::user()->level_id === 1)
-                            <a href="{{ route('spp.index')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-full transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Payment</a>
+                            <a href="{{ route('spp.index')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-md transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Payment</a>
                         @elseif (Auth::user()->level_id === 2)
-                            <a href="{{ route('spps.index')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-full transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Payment</a>
+                            <a href="{{ route('spps.index')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-md transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">Payment</a>
                         @else
-                            <a href="{{ route('pay.index')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-full transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">History Payment</a>
+                            <a href="{{ route('pay.index')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-md transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">History Payment</a>
                         @endif
                     @endauth
                     @endif
-                    <a href="{{ url('/about')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-full transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">About</a>
+                    <a href="{{ url('/about')}}" class="hover:bg-yellow-400 hover:text-gray-900 rounded-md transition duration-100 px-3 mb-1 mb-5 mr-0 text-base font-bold sm:mb-0 sm:mr-4 lg:mr-8">About</a>
                     @if (Auth::guest())
                         <a href="{{ route('register')}}" class="relative mb-5 sm:mb-0">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded"></span>

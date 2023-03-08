@@ -5,8 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Payment PDF</title>
+
+    <style>
+        body {
+            font-family : Arial, Helvetica, sans-serif;
+        }
+        th {
+            background-color : #81b0fc;
+        }
+        th, td {
+            border-top : 1px solid #ddd;
+            border-bottom : 1px solid #ddd;
+            border-left : 1px solid #ddd;
+            border-right : 1px solid #ddd;
+        }
+        tr:nth-child(odd) {
+            background-color : #f2f2f2;
+        }
+
+    </style>
 </head>
 <body>
+
+
+    <div style="text-align : center;">
+        <h6 
+        style=
+        "font-weight : bold; 
+        font-family : Arial, Helvetica, sans-serif;
+        font-size : 2.5rem;
+        background-color : yellow;
+        pading-x : 3px;
+        pading-y : 0px;
+        border-radius : 7px;
+        ">SMK PEMKAB PONOROGO</h6>
+        <span style=
+        "font-weight : bold; 
+        font-family : Arial, Helvetica, sans-serif;
+        font-size : 1.2rem;
+        ">
+            Data Report E-Spp
+        </span>
+    </div>
 
     @if ($pay)
     
@@ -26,6 +66,7 @@
                 <th class="px-4 py-2 border">Tanggal Bayar</th>
                 <th class="px-4 py-2 border">Spp Tahunan</th>
                 <th class="px-4 py-2 border">Keterangan</th>
+                <th class="px-4 py-2 border">Lain Lain</th>
             </tr>
         </thead>
 
@@ -52,8 +93,9 @@
                           <span class="bg-[#FD841F] uppercase px-2 pb-1 rounded-full text-white text-[10px] font-semibold shadow-md"> {{ $s->keterangan}}</span>
                       @endif
                   </td>
+                  <td class="border px-4 py-2">{{ $s->lain-lain}}</td>
                   @empty
-                  <td colspan="6">Kosong</td>
+                  <td colspan="7" style="text-align : center; place-items: center;">Kosong</td>
                   </tr>
                 @endforelse
             </tbody>

@@ -51,12 +51,14 @@ class PaymentController extends Controller
         $pay = new Pembayaran();
 
         $pay = [
+            'code_id' => $request->code_id,
             'id_petugas' => $request->id_petugas,
             'nisn' => $request->nisn,
             'tgl_bayar' => $request->tgl_bayar,
             'id_spp' => $request->id_spp,
             'status_id' => $request->status_id,
             'keterangan' => $request->keterangan,
+            'lain-lain' => $request->lain_lain,
             'uang_bayar' => $request->uang_bayar,
             'jumlah_bayar' => $request->jumlah_bayar,
             'kembalian_bayar' => $request->kembalian_bayar,
@@ -111,6 +113,7 @@ class PaymentController extends Controller
             'id_spp' => $request->id_spp,
             'status_id' => $request->status_id,
             'keterangan' => $request->keterangan,
+            'lain-lain' => $request->lain_lain,
             'uang_bayar' => $request->uang_bayar,
             'jumlah_bayar' => $request->jumlah_bayar,
             'kembalian_bayar' => $request->kembalian_bayar,
@@ -193,6 +196,56 @@ class PaymentController extends Controller
     
         $output = $pdf->output();
         $filename = 'payment.pdf';
+    
+        if ($request->input('action') == 'download') {
+            return response()->download($output, $filename);
+        }
+    
+        return response($output, 200)
+            ->header('Content-Type', 'application/pdf')
+            ->header('Content-Disposition', 'inline; filename="'.$filename.'"');
+    }
+
+    public function export(Request $request, $siswa_id)
+    {
+        $pay = ConfirmPayment::findOrFail($siswa_id);
+        $options = new Options();
+        $options->setIsHtml5ParserEnabled(true);
+        $options->set('isRemoteEnabled', true);
+        $options->set('defaultFont', 'Arial');
+    
+        $pdf = new Dompdf($options);
+        $html = View::make('payment.spp.export', compact('pay'))->render();
+        $pdf->loadHtml('
+        <html>
+            <head>
+                <link rel="stylesheet" href="/css/main.css">
+                <style>
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                
+                td, th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+
+                title {
+                    font-weight : 5px;
+                    color : black;
+                }
+                </style>
+            </head>
+            <body>'. $html .'</body>
+        </html>');
+
+        $pdf->setPaper('A4', 'landscape');
+        $pdf->render();
+    
+        $output = $pdf->output();
+        $filename = 'data-kwitansi.pdf';
     
         if ($request->input('action') == 'download') {
             return response()->download($output, $filename);

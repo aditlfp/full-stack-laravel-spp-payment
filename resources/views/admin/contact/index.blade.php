@@ -14,11 +14,11 @@
         <table class="table-auto text-center" id="searchTable">
             <thead>
               <tr>
-                <th class="px-4 py-2 border">No</th>
-                <th class="px-4 py-2 border">Username</th>
-                <th class="px-4 py-2 border">Email</th>
-                <th class="px-4 py-2 border">Message</th>
-                <th class="px-4 py-2 border">Action</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">No</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Username</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Email</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Message</th>
+                <th class="px-4 py-2 border-2 border-inherit bg-amber-300">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -28,11 +28,11 @@
 
               @foreach( $ct as $s)
                 <tr>
-                  <td class="border px-4 py-2">{{ $no++}}</td>
-                  <td class="border px-4 py-2">{{ $s->username}}</td>
-                  <td class="border px-4 py-2">{{ $s->email}}</td>
-                  <td class="border px-4 py-2"><textarea name="desc" id="desc" cols="30" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >{{ $s->desc}}</textarea></td>
-                  <td class="border px-4 py-2">
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $no++}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->username}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">{{ $s->email}}</td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2"><textarea name="desc" id="desc" cols="30" rows="10" class="shadow appearance-none border-2 border-inherit rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >{{ $s->desc}}</textarea></td>
+                  <td class="border-2 border-inherit bg-amber-200 px-4 py-2">
                     <form action="{{ url('admin/contact/'. $s->id)}}" method="POST">
                       @csrf
                       @method('DELETE')
